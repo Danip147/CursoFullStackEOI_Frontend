@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Etiquetas obligatorias -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- Etiquetas opcionales -->
+    <meta name="description" content="Página formularios">
+    <meta name="keywords" content="Html, css, Javascript, Typescript, Angular">
+    <meta name="author" content="Daniel Porras">
+    <title>Formularios</title>
+</head>
+
+<body>
+    <!-- Control + K + C para comentar -->
+    <!-- table>(tr>th*6)+(tr*6>td*6) -->
+    <!-- ul>li*6 -->
+    <!-- ol>li*6 -->
+
+    <form>
+        <label for="nombre">
+            Nombre: <input type="text" name="nombre" id="nombre" size="80" required>
+        </label>
+        <br><br>
+        <label for="apellido">
+            Apellido: <input type="text" name="apellido" id="apellido" size="80" placeholder="Introduce apellido">
+        </label>
+        <br><br>
+        <label for="password">
+            Password: <input type="password" name="password" id="password" size="12" minlength="6" maxlength="12">
+        </label>
+        <br><br>
+        <label for="edad">
+            Edad: <input type="number" name="edad" id="edad" min="0" max="120" value="25">
+        </label>
+        <p>
+            <label for="fecha">
+                Fecha de nacimiento: <input type="date" name="fecha" id="fecha" max="2023-01-27">
+            </label>
+        </p>
+        <p>
+            <label for=fecha-hora"">
+                Fecha y hora local: <input type="datetime-local" name="fecha-hora" id="fecha-hora">
+            </label>
+        </p>
+        <p>
+            <label>
+                Sexo:
+            </label>
+
+            <label for="hombre">
+                Hombre: <input type="radio" name="sexo" value="h" id="hombre">
+            </label>
+            <label for="mujer">
+                Mujer: <input type="radio" name="sexo" value="m" checked>
+            </label>
+
+        </p>
+
+        <p>
+            <label>
+                Sube foto de perfil: <input type="file" name="file" accept="image/*" multiple>
+            </label>
+        </p>
+
+        <p>
+            <input type="submit" value="SUBMIT" name="submit">
+            <input type="reset" value="RESET" name="reset">
+            <input type="button" value="BUTTON" name="butto">
+        </p>
+
+
+
+
+
+
+
+
+    </form>
+
+
+
+</body>
+
+</html>
