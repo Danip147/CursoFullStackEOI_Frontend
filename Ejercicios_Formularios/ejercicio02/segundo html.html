@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Etiquetas obligatorias -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- Etiquetas opcionales -->
+    <meta name="description" content="Mi primera página web">
+    <meta name="keywords" content="Html, css, Javascript, Typescript, Angular">
+    <meta name="author" content="Daniel Porras">
+    <title>Segunda página</title>
+    
+</head>
+
+<body>
+    <script>
+        const parametros = new URLSearchParams(window.location.search); 
+        //let nombre = parametros.get('nombre');
+        //console.log(nombre);
+        parametros.forEach(e => {console.log(e)})
+        document.body.innerHTML = "<h1> Hola: " + parametros.get('nombre') + "</h1><br>"
+        document.body.innerHTML += "<h4> Se ha gastado usted: " + parametros.get('precio') + " euros</h4><br>"
+
+    </script>
+    
+
+</body>
+
+</html>

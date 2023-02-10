@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/estilos.css" rel="stylesheet">
+    <title>Ejercicio02 formulario</title>
+</head>
+
+<body>
+    
+    <h1>Ejercicio 2</h1>
+    <form action="segundo html.html" method="get">
+        <fieldset>
+            <legend>Datos básicos</legend>
+            <label for="nombre">
+                Nombre<br>
+                <input style="width: 350px;" type="text" name="nombre" id="nombre" minlength="5" maxlength="50" required>
+            </label>
+            <br><br>
+            <label>
+                Descripción<br>
+                <textarea rows="4" cols="50" name="descriptcion"></textarea>
+            </label>
+            <br><br>
+            <label>
+                Foto: <input type="file" id="fileInput" accept="image/*">
+            </label>
+            <br>
+            <p>
+                <input type="checkbox" name="contador">Añadir contador de visitas
+            </p>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Datos económicos</legend>
+            <label for="precio">
+                Precio
+                <input style="width:50px" type="number" name="precio" id="precio" required>
+                €
+            </label>
+            <label>&emsp; Impuestos
+                <select name="impuestos" id="impuestos">
+                    <option value="4">4%</option>
+                    <option value="7">7%</option>
+                    <option value="16">16%</option>
+                    <option value="25">25%</option>
+                </select>
+            </label>
+            <br><br>
+            <label>
+                <input type="radio" name="promocion" value="N" checked>Ninguno
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="promocion" value="G">Transporte gratuito
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="promocion" value="D">Descuento 5%
+            </label>
+            <br>
+        </fieldset>
+        <input type="submit" value="2a pantalla">
+    </form>
+    <a href="http://developer.mozilla.org/">Colores</a>
+
+    
+</body>
+
+</html>
