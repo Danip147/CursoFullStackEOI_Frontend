@@ -17,12 +17,12 @@ function pedirModoVisualizacion() {
   let modo;
   do {
     modo = prompt(
-      "Introduce el modo de visualización (LISTA, PARRAFO o TABLA):"
+      "Introduce el modo de visualización (LISTA, PARRAFO,TABLA o DESPLEGABLE):"
     ).toUpperCase();
-    if (modo !== "LISTA" && modo !== "PARRAFO" && modo !== "TABLA") {
+    if (modo !== "LISTA" && modo !== "PARRAFO" && modo !== "TABLA" && modo !== "DESPLEGABLE") {
       alert("No has introducido un modo");
     }
-  } while (modo !== "LISTA" && modo !== "PARRAFO" && modo !== "TABLA");
+  } while (modo !== "LISTA" && modo !== "PARRAFO" && modo !== "TABLA" && modo !== "DESPLEGABLE");
 
   return modo;
 }
@@ -35,32 +35,29 @@ function imprime(num1, num2, mode) {
   for (let i = 1; i <= end; i++) {
     switch (mode) {
       case "LISTA":
-        result += "<ul><li>" + start + " x " + i + " = " + start * i + "</li></ul>";
+        result += "<li>" + start + " x " + i + " = " + start * i + "</li>";
         break;
       case "PARRAFO":
         result += "<p>" + start + " x " + i + " = " + start * i + "</p>";
         break;
       case "TABLA":
-        result +=
-          "<table><tr><td>" +
-          start +
-          "</td><td> x </td><td>" +
-          i +
-          "</td><td> = </td><td>" +
-          i * start +
-          "</td></tr></table>";
+        result += "<tr><td>" + start + "</td><td> x </td><td>" + i + "</td><td> = </td><td>" +  i * start + "</td></tr>";
         break;
-
+       case "DESPLEGABLE":
+          result += "<option>" + start + " x " + i + " = " + start * i + "</option>";
+          break; 
+        
       default:
-        return "Error: modo de visualización no válido.";
+      return "Error: modo de visualización no válido.";
     }
   }
 
-  /*if (mode === "TABLA") {
+  if  (mode === "TABLA") {
     result = "<table>" + result + "</table>";
-  }  else if (mode === "LISTA") {
+  }  else if  (mode === "LISTA") {
     result = "<ul>" + result + "</ul>";
-  } */
+  }   else if (mode === "DESPLEGABLE")
+     result = "<select>" + result + "</select>"  
   return result;
 }
 
