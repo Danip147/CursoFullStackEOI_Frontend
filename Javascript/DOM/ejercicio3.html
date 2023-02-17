@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html">
+		<meta name="author" content="Pablo Garramone">
+		<title>Ejercicio 3</title>
+	</head>
+	<body>
+		<div id="informacion">
+			<p>Este es el primer párrafo del ejemplo, vamos a introducir
+				<strong id="str" class="neg">negrita</strong> y
+				<a href="pru.html">enlace</a>
+			</p>
+			<h2>ejemplo 2</h2>
+			<p id="p2">Este es el segundo párrafo</p> <h1>ejemplo 3</h1>
+			<p> Este es el tercer párrafo</p>
+		</div>
+
+		<script>
+			let parraf1_form1 = document.getElementsByTagName("p")[0];
+			console.log(parraf1_form1.nodeName);
+
+			let parraf1_form2 = document.querySelector("p");
+			console.log(parraf1_form2.nodeName);
+
+			let parraf1_form3 = document.querySelectorAll("p")[0];
+			console.log(parraf1_form3.nodeName);
+
+			let parraf1_form4 = document.querySelectorAll('div#informacion p')[0];
+			console.log(parraf1_form4.nodeName);
+
+			let parraf1_form5 = document.getElementsByClassName('neg')[0].parentNode;
+			console.log(parraf1_form5.nodeName);
+
+			let division = document.getElementById("informacion");  // estoy en el div
+			let parraf1_form6 = division.children[0];				// cojo el primer hijo
+			console.log(parraf1_form6.nodeName);
+
+			let parraf1_form7 = document.querySelector("div p");
+			console.log(parraf1_form7.nodeName);
+
+			/* let cabecera = document.head;
+			let cuerpo = cabecera.nextElementsSibling;
+			parraf1_form2 = cuerpo.children[0].children[0];
+			console.log(parraf1_form2.nodeName); */
+
+			let parraf1_form8 = document.querySelector("div > p");
+			console.log(parraf1_form8.nodeName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</script>
+	</body>
+</html>

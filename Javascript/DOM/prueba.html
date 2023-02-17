@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba DOM</title>
+</head>
+<body>
+    <h1>titulo</h1>
+    <p id = "p1">parrafo1</p>
+    <p class = "parrafos">parrafo2</p>
+    <p class = "parrafos">parrafo3</p>
+    <p name = "p4">parrafo4</p>
+
+
+
+    <script>
+        let madre = document.documentElement;    // accedo a los nodos
+        console.log(madre.lang);                 // lang es el atributo
+        madre.lang= "es";
+
+        let cabecera = document.head;
+        console.log(cabecera.nodeName);           // nodeNome me dice el nombre de la etiqueta
+
+        let cuerpo = document.body;
+        console.log(cuerpo.nodeName);
+
+        let parrafo1 = document.getElementById("p1");
+        console.log(parrafo1.nodeName);
+
+        /// TODOS ESTOS DEVUELVEN ARRAYS
+
+        let parrafosClass = document.getElementsByClassName("parrafos");        
+        let parrafo2 = parrafosClass[0];
+        console.log(parrafo2.nodeName);
+        let parrafo3 = parrafosClass[1];
+        console.log(parrafo3.nodeName);
+
+        let parrafosName = document.getElementsByName("p4");
+        let parrafo4 = parrafosName[0];
+        console.log(parrafo4.nodeName);
+
+        let titulos = document.getElementsByTagName("h1");
+        let titulo1 = titulos[0];
+        console.log(titulo1.nodeName);
+
+        console.log(titulo1.innerHTML);
+
+
+    </script>
+    
+</body>
+</html>

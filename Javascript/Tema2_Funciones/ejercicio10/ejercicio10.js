@@ -10,7 +10,7 @@ let diasSemana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes","Sábado",
 
 // for normal
 for (let i = 0; i < diasSemana.length; i++) {
-  console.log(i+ " "+ diasSemana[i]);
+  console.log(diasSemana[i]);
 }
 // forEach
 diasSemana.forEach(function (dia, index) {
@@ -30,19 +30,27 @@ let diasSemanaNum = diasSemana.map(function (dia, index) {
   return index + 1 + "-" + dia;
 });
 
-let impresion = diasSemanaNum.join;
+let impresion = diasSemanaNum.join();
 
 console.log(diasSemanaNum);
 
+/*  diasSemana.map((dia, index)) => index + 1 + "-" + dia; */
+
+
 
 // 2) Imprime otro array con los elementos que acaben en consonencia
-    let diasConsonante = diasSemana.filter(dia => {
-    let ultimaLetra = dia[dia.length - 1].toLowerCase();
-    let consonantes = "bcdfghjklmnñpqrstvwxyz";
-    return sentencias.includes(ultimaLetra);
-  });
+    /* let arrayFilter = diasSemana.filter(function(elemento){
+      if(elemento.charAt(elemento.length-1) == A || 
+        elemento.charAt(elemento.length-1) == E || 
+        elemento.charAt(elemento.length-1) == I || 
+        elemento.charAt(elemento.length-1) == O || 
+        elemento.charAt(elemento.length-1) == U )
+        return false;
+      else
+        return true;
+    })
   
-  console.log("Días de la semana que acaban en consonencia: " + diasConsonante);  
+  console.log(arrayFilter.join());  */ 
 
 
 // 3) Indica si algún día tiene 2 vocales a, o, e en el nombre
@@ -64,5 +72,28 @@ console.log("¿Algún día tiene 2 vocales a, o, e en el nombre?: " + dosVocales
 
 
 // 4) Ordena el array de días descendentemente
-let diasSemanaDesc = diasSemana.reverse();
-console.log(diasSemanaDesc);
+/* let diasSemanaDesc = diasSemana.reverse();
+console.log(diasSemanaDesc); */
+
+console.log(diasSemana.sort().reverse().join());
+
+ diasSemana.sort(function(x1,x2){
+  if(x1 > x2)
+      return -1;
+  else if (x1 < x2)
+    return 1
+    else 
+      return 0;
+});
+
+console.log(diasSemana.join()); 
+
+/* diasSemana.sort(x1,x2) => {
+  if(x1 > x2)
+      return -1;
+  else if (x1 < x2)
+    return 1;
+    else 
+      return 0;
+}; */
+

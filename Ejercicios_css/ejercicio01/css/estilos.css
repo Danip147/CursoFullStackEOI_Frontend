@@ -1,0 +1,82 @@
+h1 {
+    color:red;
+}
+
+h2 {
+    color:blue;
+}
+
+#unH2concreto {
+    color: orange;
+}
+
+/* p, li {
+    color: rgb(92, 191, 92);
+} */
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover{
+    text-decoration: none;
+    background-color: gold;
+    transition: 1.5s;
+}
+
+ul {
+    list-style-type: upper-roman;
+}
+
+ol {
+    list-style-type: none;
+}
+
+.numeros_romanos {
+    list-style-type: upper-roman;
+    font-size: 20px;
+}
+
+.abecedario {
+    list-style-type: lower-alpha;
+}
+
+.lista1 {
+    color:red;
+    list-style-type: none;
+}
+.lista2 {
+    color: blue;
+    list-style-type: circle;
+}
+.lista3 {
+    color:green;
+    list-style-type: disc;
+}
+
+.lista4 {
+    color:orange;
+    list-style-type: square;
+}
+
+.lista5 {
+    color:red;
+    list-style-type: upper-roman;
+}
+.lista6 {
+    color:blue;
+    list-style-type: lower-greek;
+}
+.lista7 {
+    color:green;
+    list-style-type: lower-alpha;
+}
+.lista8 {
+    color: black;
+    list-style-type: upper-alpha;
+}
+
