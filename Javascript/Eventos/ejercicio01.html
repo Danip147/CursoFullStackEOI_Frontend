@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Eventos</title>
+
+
+
+</head>
+
+<body>
+
+    <h1>TITULO</h1>
+    <p>PARRAFO 1</p>
+    <p>PARRAFO 2</p>
+    <p>PARRAFO 3</p>
+    <p>PARRAFO 4</p>
+
+
+    <script>
+
+        let titulo = document.querySelector("h1");
+
+        titulo.addEventListener("click", function () {
+            let parrafos = document.querySelectorAll("p");
+
+            if (parrafos.length === 0) {
+                alert("Error: no hay párrafos para eliminar.");
+            } else {
+                let ultimoParrafo = parrafos[parrafos.length - 1];
+                ultimoParrafo.parentNode.removeChild(ultimoParrafo);
+            }
+        });
+
+
+
+        document.addEventListener("click", function (event) {
+            if (event.target.nodeName === "P") {
+                let nuevoParrafo = document.createElement("p");
+                nuevoParrafo.textContent = "PARRAFO " + (document.querySelectorAll("p").length + 1);
+                document.body.appendChild(nuevoParrafo);
+            }
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- si pulsamos el titulo eliminar el ultimo parrafo
+    1) Acceder al nodo titulo
+    2) Añadir evento click al titulo
+    3) Desarrollar funcion que elimine el ultimo parrafo
+        3.1) Acceder al ultimo parrafo
+        3.2) Eliminar ese ultimo parrafo usando removeChild 
+    4) Si no hay parrafos dar un mensaje de error 
+
+    1) Pedir al usuario cantidad
+
+	2) Crear un desplegable con tantos option como el numero que ha dado.
+
+	Elemento 1 ... Elemento N
+
+	3) Crear tanto RADIOBUTTON como elemento tambien
+
+	4) Si cambias el valor del radio, se cambie el desplegable y viceversa
+
+
+-->
+
+
+
+    

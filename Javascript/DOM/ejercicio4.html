@@ -18,39 +18,47 @@ tienen ese valor de clase.
 
 
 //1
-		let madre = document.documentElement;    // accedo a los nodos
-        madre.lang= "en";
+		let padre = document.documentElement;    // accedo a los nodos
+        padre.lang= "en";
+		/* padre.setAttribute("lang", "en"); */
 
 //2	
 		let action = document.getElementById("pepito").action;
+		/* let action = document.querySelector("#pepito"); */
 		console.log(action);
 
 
 // 3
 
-		let rojo = document.querySelector(".rojo");
-		console.log(rojo.className);
+		let claseRojos = document.getElementsByClassName("rojo");
 
+		console.log(claseRojos[0].className);
+		console.log(" numero de elementos con el class a rojo " + claseRojos.length);
+
+		/* let rojo = document.querySelector(".rojo");
+		console.log(rojo.className); */
 
 //4
 
-		let contadorLabels = 0;
+		/* let contadorLabels = 0; */
 		let labels = document.getElementsByTagName("label");
-		for (let i = 0; i < labels.length; i++) {
+		/* for (let i = 0; i < labels.length; i++) {
 			contadorLabels++;
 		}
-		console.log(contadorLabels);
+		console.log(contadorLabels); */
+		console.log("labels totales : " + labels.length);
 
-
-
+		function pulsarTitulo(){
+			alert("hola Dani")
+		}
 
 
 }
 
-    </script>
+</script>
 </head>
 <body>
-	<h1>FORMULARIO HECHO CON HTML</h1>
+	<h1 onclick="pulsarTitulo();">FORMULARIO HECHO CON HTML</h1>
 	<form id="pepito" action="pagina2.html">
 		<label class="rojo" for="Nombre">
 		Nombre:<input type="text" name="Nombre">
