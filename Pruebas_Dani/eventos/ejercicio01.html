@@ -1,0 +1,34 @@
+<!-- En una página web vas a colocar un elemento tipo div con un argumento onclick() para que al
+ pulsar sobre el bloque se abra una ventana alert con el mensaje "Pulsaste sobre el botón".
+  El bloque div deberá tener como tecto "Pulsa aquí". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01</title>
+</head>
+
+
+<body>
+
+    <div onclick="muestraAlerta">Pulse aquí</div>
+
+
+    <script>
+        let atrapar = document.querySelector("div");
+
+        atrapar.addEventListener("click",muestraAlerta);
+        
+        function muestraAlerta(){
+            alert("Pulsaste sobre el botón");
+        }
+
+
+    </script>
+
+    
+</body>
+</html>
