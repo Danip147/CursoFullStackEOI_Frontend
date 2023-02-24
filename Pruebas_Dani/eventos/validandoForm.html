@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validando formularios</title>
+</head>
+<body>
+
+    <script>
+
+        function validar(){
+        let f = document.formulario;
+        let nombreUsuario = f.usuario.value.toLowerCase();
+      
+        if( nombreUsuario !== "juan"){
+            alert("Nombre de usuario incorrecto");
+            f.usuario.focus();
+            return false;
+        }
+        if(f.pass.value !== "1234"){                           //SI LA CONTRASEÑA ES DISTINTA A 1234 NO PUEDES ENTRAR
+            alert("Contraseña incorrecta");
+            f.pass.focus();
+            return false;
+        }
+
+        entrar(nombreUsuario);
+
+
+    }
+
+    window.onload = function () {           // IMPORTATE, ESTO ES LO QUE VA COMO ATRIBUTOS DEL FORMULARIO
+        let f = document.formulario;
+        f.onsubmit = validar;  
+    }
+
+    function entrar(nombreUsuario){
+        document.write("Bienvenido " + nombreUsuario);
+    }
+
+
+    </script>
+
+
+    <form name ="formulario" action="#" method="get" >
+
+        <p><label>Nombre Usuario:<input type="text" name="usuario"></label></p>
+        <p><label>Password:<input type="text" name="pass"></label></p>
+       <input type="submit" value="ENTRAR">
+    
+    </form>
+
+
+    
+</body>
+</html>
