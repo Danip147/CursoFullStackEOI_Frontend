@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio Eventos</title>
+    <style>
+        table {
+            border: 2px solid green;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        td:hover {
+            border: 10px solid red;
+        }
+    </style>
+
+    <script>
+
+        /*    
+        1) Pide al usuario filas y columnas
+        2) Haz una tabla con esas filas y columnas usando DOM en el TABLE del HTML
+        Poniendo número empezando por 1. 
+        La tabla debe tener 2px solida y color verde. Y debe estar colapsada.
+        3) Si pulsas sobre un TD multiplica por 2 el valor de la celda
+        4) Si pasas el ratón por encima del TD que el borde del mismo se ponga
+        con rojo y de 10px de grosor
+        5) Si sale el ratón del TD vuelve a su borde normal */
+
+        function pedirCosas(texto){
+            let num;
+            do {
+               num = +prompt(texto);
+            } while (isNaN(num) || num < 1);
+            return num;
+        }
+
+        window.onload = function () {
+            // Pide al usuario filas y columnas
+            let filas = pedirCosas("Dime cuantas filas quieres: ");
+            let columnas = pedirCosas("Dime cuantas columnas quieres: ");
+
+            
+            // Haz una tabla con esas filas y columnas
+
+            let tabla = document.getElementsByTagName("table")[0];
+
+            for (let f = 0; f < filas; f++) {
+                let fila = document.createElement("tr");
+                for (let c = 0; c < columnas; c++) {
+                    let celda = document.createElement("td");
+                    celda.textContent = f * columnas + c + 1;
+                    fila.appendChild(celda);
+
+                    // Si pulsas sobre un TD multiplica por 2 el valor de la celda
+                    celda.addEventListener("click", function () {
+                        celda.textContent = parseInt(celda.textContent) * 2;
+                    });
+
+                    // Si pasas el ratón por encima del TD que el borde del mismo se ponga con rojo y de 10px de grosor
+                    celda.addEventListener("mouseover", function () {
+                        celda.style.border = "10px solid red";
+                    });
+
+                    // Si sale el ratón del TD vuelve a su borde normal
+                    celda.addEventListener("mouseout", function () {
+                        celda.style.border = "1px solid black";
+                    });
+                }
+                tabla.appendChild(fila);
+            }
+
+            // Agrega la tabla al documento
+            document.body.appendChild(tabla);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <table>
+
+    </table>
+
+
+</body>
+
+</html>

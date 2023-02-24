@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio Eventos</title>
+    <style>
+        table {
+            border: 2px solid green;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        td:hover {
+            border: 10px solid red;
+        }
+    </style>
+
+    <script>
+
+        /*    
+       1) CAPTURAR EVENTO SUBMIT (En el form!!!!!)
+       2) LLAMA VALIDAR
+       3) VALIDAS QUE FILAS Y COLUMNAS  sean un numero sino no dejes
+       4 SI TODO VA BIEN LLAMAS A LA FUNCION LANZAR
+*/
+       
+        function validar(){
+            //VALIDACIONES
+
+            let f = document.formulario;
+            
+            if (isNaN(f.filas.value) || f.filas.value < 1){
+                alert("Error!, introduce número correcto");
+                f.filas.focus();
+                return false;
+            }
+           
+           if(isNaN(f.filas.value) || f.filas.value < 1){
+            alert("Error!, introduce número correcto");
+            f.filas.focus();
+            return false;
+           }
+
+            lanzar(f.filas.value,f.columnas.value);
+            return false;
+        }
+
+
+        window.onload = function () {
+            let f = document.formulario;
+            f.onsubmit = validar;
+            
+
+        }
+
+        function lanzar(f,c) {
+            
+            // Haz una tabla con esas filas y columnas
+
+            let tabla = document.getElementsByTagName("table")[0];
+
+            for (let f = 0; f < f; f++) {
+                let fila = document.createElement("tr");
+                for (let c = 0; c < columnas; c++) {
+                    let celda = document.createElement("td");
+                    celda.textContent = f * columnas + c + 1;
+                    fila.appendChild(celda);
+
+                    // Si pulsas sobre un TD multiplica por 2 el valor de la celda
+                    celda.addEventListener("click", function () {
+                        celda.textContent = parseInt(celda.textContent) * 2;
+                    });
+
+                    // Si pasas el ratón por encima del TD que el borde del mismo se ponga con rojo y de 10px de grosor
+                    celda.addEventListener("mouseover", function () {
+                        celda.style.border = "10px solid red";
+                    });
+
+                    // Si sale el ratón del TD vuelve a su borde normal
+                    celda.addEventListener("mouseout", function () {
+                        celda.style.border = "1px solid black";
+                    });
+                }
+                tabla.appendChild(fila);
+            }
+
+            // Agrega la tabla al documento
+            document.body.appendChild(tabla);
+            
+        }
+        
+    </script>
+
+</head>
+
+<body>
+
+    <form name="formulario" action="#" method="get">
+
+        <p><label>Filas:<input type="text" name="filas"></label></p>
+        <p></p><label>Columnas:<input type="text" name="columnas"></label></p>
+        <p></p><input type="submit" value="Lanzar"></p>
+
+    </form>
+
+    <table>
+
+    </table>
+
+
+</body>
+
+</html>
