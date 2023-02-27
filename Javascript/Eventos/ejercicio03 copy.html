@@ -34,11 +34,11 @@
 
             let f = document.formulario;
             
-            if (isNaN(f.filas.value) || f.filas.value < 1){
+           /*  if (isNaN(f.filas.value) || f.filas.value < 1){
                 alert("Error!, introduce número correcto");
                 f.filas.focus();
                 return false;
-            }
+            } */
            
            if(isNaN(f.filas.value) || f.filas.value < 1){
             alert("Error!, introduce número correcto");
@@ -47,13 +47,24 @@
            }
 
             lanzar(f.filas.value,f.columnas.value);
+            event.preventDefault();
             return false;
         }
 
+        function validarCustom(){
+            let f = document.formulario;
+            if (isNaN(f.filas.value) || f.filas.value < 1){
+                f.filas.setCustomValidity("las filas deben ser un número positivo")
+            }else {
+                f.filas.setCustomValidity("");
+            }
+            }
 
         window.onload = function () {
             let f = document.formulario;
             f.onsubmit = validar;
+           
+            f.filas.oninput = validarCustom;
             
 
         }
